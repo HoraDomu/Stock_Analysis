@@ -1,2 +1,4 @@
 # Stock_Analysis 
 Stock Analysis & Volatility Analyzer!@@
+User will need python installed on machine, latest version is okay. All modules should have no issues. 
+This tool essentially has two functions. The first is a Stock Analyzer tool. A window will appear and allow the user to input a specific stock they would like to view data on. Then the second is once you have that info ideally have (IBKR Trader Work Station installed). Then info on the respective stock will be able to be seen with the Volatility tool. Code is subjected to change. This is my baby. I read books and watched tutorials on how to do this. It's not perfect but its a work in progress and does efficently work. To test it I invested 50 dollars of my own money and was able to net 15 dollars profit. Nothing too crazy but shows the tool does indeed work. But Like I said it's subject to change, think of this as a beta. 

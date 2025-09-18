@@ -48,21 +48,19 @@ class IBApp(EWrapper, EClient):
 
 
 class VolatilityCrushAnalyzer:
-    
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Volatility Crush Analyze v1")
-        self.root.geometry("1200x800")
-
+    def __init__(self, parent):
+        self.parent = parent  
         self.ib_app = IBApp()
         self.connected = False
-
         self.current_spot = None
         self.current_iv = None
         self.ticker = None
-
         self.risk_free_rate = .05
+
         self.setup_ui()
+
+    
+
 
     def create_equity_contract(self, symbol):
         contract = Contract()
@@ -71,14 +69,15 @@ class VolatilityCrushAnalyzer:
         contract.exchange = "SMART"
         contract.currency = "USD"
         return contract
+    
 
 
     def setup_ui(self):
-        main_frame = ttk.Frame(self.root, padding="15")
+        main_frame = ttk.Frame(self.parent, padding="15")
         main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
-        self.root.columnconfigure(0, weight=1)
-        self.root.rowconfigure(0, weight=1)
+        self.parent.columnconfigure(0, weight=1)
+        self.parent.rowconfigure(0, weight=1)
         main_frame.columnconfigure(0, weight=1)
         main_frame.rowconfigure(1, weight=1)
 
@@ -280,7 +279,7 @@ class VolatilityCrushAnalyzer:
     def update_status(self, message):
         timestamp = datetime.now().strftime("%H:%M:%S")
         self.status_var.set(f"[{timestamp}] {message}")
-        self.root.update_idletasks()
+        self.parent.update_idletasks()
 
     def connect_ib(self):
         try:
@@ -419,7 +418,7 @@ class VolatilityCrushAnalyzer:
         except Exception as e:
             self.update_status(f"Error requesting IV data {e}")
 
-        self.root.after(3000, self.process_market_data)
+        self.parent.after(3000, self.process_market_data)
 
     def process_market_data(self):
         if 1 in self.ib_app.historical_data and len(self.ib_app.historical_data[1]) > 0:
@@ -573,21 +572,15 @@ class VolatilityCrushAnalyzer:
         return theta
     
 class StockScout:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Stock Scout v1")
-        self.root.geometry("600x300")
-        
-    
-        self.label = tk.Label(root, text="Enter Stock Ticker:", font=("Arial", 12))
-        self.label.pack(pady=10)
-        
-        self.entry = tk.Entry(root, font=("Arial", 12))
-        self.entry.pack(pady=5)
-        
-       
-        self.button = tk.Button(root, text="Get Stock Data", command=self.get_stock_data)
-        self.button.pack(pady=10)
+    def __init__(self, parent):
+            self.parent = parent
+            self.label = tk.Label(parent, text="Enter Stock Ticker:", font=("Arial", 12))
+            self.label.pack(pady=10)
+            self.entry = tk.Entry(parent, font=("Arial", 12))
+            self.entry.pack(pady=5)
+            self.button = tk.Button(parent, text="Get Stock Data", command=self.get_stock_data)
+            self.button.pack(pady=10)
+
     
     def get_stock_data(self):
         ticker = self.entry.get().upper()
@@ -631,22 +624,21 @@ class StockScout:
 
 def main():
     root = tk.Tk()
-    root.withdraw()  
+    root.title("All-in-One Trading Tool")
+    root.geometry("1800x900")
 
- 
-    vca_window = tk.Toplevel()
-    VolatilityCrushAnalyzer(vca_window)
+    vca_frame = ttk.Frame(root)
+    vca_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=10, pady=10)
+    VolatilityCrushAnalyzer(vca_frame)
 
-  
-    scout_window = tk.Toplevel()
-    StockScout(scout_window)
+    scout_frame = ttk.Frame(root)
+    scout_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=10, pady=10)
+    StockScout(scout_frame)
 
     root.mainloop()
 
 
+
+
 if __name__ == "__main__":
     main()
-
-
-
-

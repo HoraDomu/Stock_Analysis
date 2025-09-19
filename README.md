@@ -17,16 +17,40 @@ A Python-based tool that provides **two main functions**:
 ---
 
 ## 📦 Requirements
-- [Python (latest version)](https://www.python.org/downloads/)
-- Required modules (most should install without issue):
-  - `tkinter`
-  - `pandas`
-  - `numpy`
-  - `matplotlib`
-  - `yfinance`
-  - `ibapi`
-  - `scipy`
 
-Install all dependencies with:
+Make sure you have the latest version of **Python** installed.  
+
+This project uses the following Python libraries:
+
+- `tkinter` (standard library – included with Python)
+- `threading` (standard library)
+- `time` (standard library)
+- `datetime` (standard library)
+- `warnings` (standard library)
+- `scipy` (specifically `scipy.stats.norm`)
+- `pandas`
+- `numpy`
+- `ibapi`
+- `yfinance`
+- `matplotlib`
+
+---
+
+### Install Dependencies
+You can install the required external libraries with:
+
 ```bash
-pip install -r requirements.txt
+pip install scipy pandas numpy ibapi yfinance matplotlib
+---------------------------------------------------------------------------------------------------------
+
+📈 Real-World Test
+
+I tested this tool by investing $50 and netting $15 profit.
+While that’s not life-changing, it shows the tool is functional and has real-world application potential.
+---------------------------------------------------------------------------------------------------------
+
+⚠️ Disclaimer
+
+This project is for educational purposes only.
+It’s still a work in progress — think of it as a beta version.
+Use at your own risk when trading with real money.

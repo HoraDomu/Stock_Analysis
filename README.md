@@ -1,4 +1,32 @@
-# Stock_Analysis 
-Stock Analysis & Volatility Analyzer!@@
-User will need python installed on machine, latest version is okay. All modules should have no issues. 
-This tool essentially has two functions. The first is a Stock Analyzer tool. A window will appear and allow the user to input a specific stock they would like to view data on. Then the second is once you have that info ideally have (IBKR Trader Work Station installed). Then info on the respective stock will be able to be seen with the Volatility tool. Code is subjected to change. This is my baby. I read books and watched tutorials on how to do this. It's not perfect but its a work in progress and does efficently work. To test it I invested 50 dollars of my own money and was able to net 15 dollars profit. Nothing too crazy but shows the tool does indeed work. But Like I said it's subject to change, think of this as a beta. 
+# 📊 Stock Analysis & Volatility Analyzer
+
+A Python-based tool that provides **two main functions**:
+
+1. **Stock Analyzer** – Opens a window where you can input a stock ticker and view detailed data.  
+2. **Volatility Analyzer** – Requires [IBKR Trader Workstation](https://www.interactivebrokers.com/en/trading/ib-api.php). Once installed, it can pull live data on the selected stock and analyze its volatility.  
+
+---
+
+## 🚀 Features
+- Simple, interactive GUI for stock lookup.
+- Volatility analysis powered by IBKR Trader Workstation.
+- Built with Python — latest version recommended.
+- Lightweight and efficient (tested with real trades).
+- Currently in **beta** – subject to change as improvements are made.
+
+---
+
+## 📦 Requirements
+- [Python (latest version)](https://www.python.org/downloads/)
+- Required modules (most should install without issue):
+  - `tkinter`
+  - `pandas`
+  - `numpy`
+  - `matplotlib`
+  - `yfinance`
+  - `ibapi`
+  - `scipy`
+
+Install all dependencies with:
+```bash
+pip install -r requirements.txt

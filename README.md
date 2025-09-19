@@ -54,3 +54,8 @@ While that’s not life-changing, it shows the tool is functional and has real-w
 This project is for educational purposes only.
 It’s still a work in progress — think of it as a beta version.
 Use at your own risk when trading with real money.
+----------------------------------------------------------------------------------------------------------
+❤️ About This Project
+
+This project is my personal baby — built by learning from books, tutorials, and hands-on trial and error.
+It’s not perfect, but it works efficiently and will continue to evolve.

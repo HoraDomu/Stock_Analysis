@@ -59,3 +59,5 @@ Use at your own risk when trading with real money.
 
 This project is my personal baby — built by learning from books, tutorials, and hands-on trial and error.
 It’s not perfect, but it works efficiently and will continue to evolve.
+
+PS. USE NEOVIM
